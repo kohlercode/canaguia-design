@@ -22,7 +22,7 @@ canaguia-<asset>[-<variant>][_<size>][@<scale>].<ext>
 | `-<variant>` | `-mono-white`, `-mono-ink` | Names the **ink**, never the surface. The two-tone mark is the default (no suffix). |
 | `_<size>` | `_140w`, `_1200x630` | Vector masters carry no size suffix. |
 | `@<scale>` | `@2x`, `@3x` | Raster only. |
-| `.<ext>` | `svg`, `png`, `webp`, `ico`, `pdf`, `json` | Lowercase. No `jpg`. |
+| `.<ext>` | `svg`, `png`, `webp`, `ico`, `pdf`, `json`, `jpg` | Lowercase. Prefer `png`/`webp` for brand rasters; `jpg` allowed for YouTube thumbnails. |
 
 | Suffix | Artwork | Goes on |
 |---|---|---|
@@ -54,9 +54,9 @@ assets/
     └── spec/video-templates.json   # sizes, safe areas, thumbnail machine spec
 ```
 
-YouTube thumbnail **rules** → root `THUMBNAIL.md`. Finished thumbnail exports may
-land under `brand/social/` as `canaguia-thumbnail_<slug>[_1920x1080].jpg` (or
-`.png`), under 2 MB, sRGB.
+YouTube thumbnail **rules** → root `THUMBNAIL.md`. Example and finished 16:9
+thumbnails live in `video/16x9/` as `canaguia-thumbnail_<slug>.jpg` (under 2 MB,
+sRGB). Optional size suffix: `_1920x1080`.
 
 ---
 
@@ -83,6 +83,16 @@ Native lockup viewBox: `0 0 79.374998 26.458333` (≈3:1). Native mark viewBox:
 
 Shipped aspects with frames: `16x9`, `9x16`, `1x1`, `4x5`. These are video/safe-area
 helpers, not YouTube thumbnail masters — thumbnail composition follows `THUMBNAIL.md`.
+
+### 16:9 thumbnail examples
+
+| File | Subject |
+|---|---|
+| `video/16x9/canaguia-thumbnail_aeropuerto-sur.jpg` | Aeropuerto Sur |
+| `video/16x9/canaguia-thumbnail_cateo-barraquitos.jpg` | Cateo de Barraquitos |
+| `video/16x9/canaguia-thumbnail_parque-anaga.jpg` | Parque Rural Anaga |
+
+Reference compositions for `THUMBNAIL.md` (vortex, gold title, watermark, timestamp pocket).
 
 ---
 

@@ -117,6 +117,9 @@ Export naming (see `assets/README.md`):
 canaguia-thumbnail_<slug>[_1920x1080].jpg
 ```
 
+Examples live in `assets/video/16x9/` (`canaguia-thumbnail_aeropuerto-sur.jpg`,
+`canaguia-thumbnail_cateo-barraquitos.jpg`, `canaguia-thumbnail_parque-anaga.jpg`).
+
 ## Typography
 
 ### Thumbnail display (CTR only)
