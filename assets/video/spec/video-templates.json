@@ -34,11 +34,63 @@
     "markMonoWhite": "assets/brand/logo/master/canaguia-mark-mono-white.svg",
     "lockup": "assets/brand/logo/master/canaguia-logo.svg"
   },
+  "thumbnail": {
+    "spec": "THUMBNAIL.md",
+    "canvas": { "w": 1920, "h": 1080 },
+    "minimum": { "w": 1280, "h": 720 },
+    "aspect": "16:9",
+    "colorSpace": "sRGB",
+    "formats": ["jpg", "png"],
+    "maxBytes": 2097152,
+    "safeExclude": {
+      "bottomRight": { "w": 180, "h": 100 },
+      "note": "YouTube timestamp badge — no faces, text, or logos"
+    },
+    "titleZone": "top-third",
+    "colors": {
+      "gold": "#ffcc00",
+      "goldHi": "#ffd700",
+      "vortexHi": "#ffe066",
+      "vortexLo": "#ffaa00",
+      "secondaryAnchor": "#ffae2a",
+      "stroke": "#000000",
+      "watermark": "#ffffff"
+    },
+    "typography": {
+      "display": "Anton, Bebas Neue, Impact, DIN Condensed Bold",
+      "casing": "uppercase",
+      "strokePx": [10, 18],
+      "line2Scale": [0.5, 0.7],
+      "watermark": {
+        "text": "canaguia.com",
+        "fontFamily": "Poppins, Arial, sans-serif",
+        "fontWeight": 500,
+        "corner": "bottom-left",
+        "paddingPx": 40,
+        "opacity": [0.9, 1.0]
+      }
+    },
+    "layers": [
+      "background-plate",
+      "vortex-glow",
+      "typography",
+      "subject-cutout",
+      "foreground-fx-watermark"
+    ],
+    "checklist": [
+      "legible-at-10-percent",
+      "timestamp-pocket-clear",
+      "golden-vortex-present",
+      "subject-sharp-expressive",
+      "watermark-bottom-left",
+      "srgb-under-2mb"
+    ]
+  },
   "platforms": {
     "youtube": {
       "avatar": { "w": 800, "h": 800, "asset": "mark" },
       "banner": { "w": 2560, "h": 1440, "safe": { "w": 1546, "h": 423 } },
-      "thumbnail": { "w": 1280, "h": 720 },
+      "thumbnail": { "w": 1920, "h": 1080, "min": { "w": 1280, "h": 720 } },
       "video": { "w": 1920, "h": 1080 }
     },
     "instagram": {

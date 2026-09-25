@@ -10,6 +10,7 @@ the source of truth for how a page or creatives should look.
 | File | Purpose |
 |---|---|
 | `DESIGN.md` | The specification. YAML front matter = normative tokens; markdown body = rationale and rules. |
+| `THUMBNAIL.md` | YouTube thumbnail production rules (same format as `DESIGN.md`). Source of truth for CTR type, Golden Vortex, watermark, and export checklist. |
 | `preview.html` | Token and component catalog on the white canvas, plus a photo hero and social frame sample. |
 | `theme.css` | Tailwind v4 `@theme` block. |
 | `tailwind.theme.json` | Tailwind v3 theme JSON. |
@@ -18,15 +19,16 @@ the source of truth for how a page or creatives should look.
 
 ## Assets
 
-`assets/` holds the artwork. `DESIGN.md` keeps the **rules**; `assets/README.md` holds
-the **inventory**. The split keeps `DESIGN.md` portable when copied alone into a
-project.
+`assets/` holds the artwork. `DESIGN.md` keeps the **site/brand rules**; `THUMBNAIL.md`
+keeps the **YouTube thumbnail rules**; `assets/README.md` holds the **inventory**.
+The split keeps `DESIGN.md` portable when copied alone into a project.
 
 ## Use
 
 1. Copy `DESIGN.md` into your project root.
 2. Tell the agent: *"Build this page / ad using DESIGN.md as the design source of truth."*
-3. For Tailwind, import `theme.css` or merge `tailwind.theme.json` into your config.
+3. For YouTube thumbnails, also use `THUMBNAIL.md`: *"Create this thumbnail using THUMBNAIL.md."*
+4. For Tailwind, import `theme.css` or merge `tailwind.theme.json` into your config.
 
 ## Validate
 
@@ -48,7 +50,8 @@ recorded in **Known Gaps**.
 ## Scope
 
 **In scope:** canaguia.com marketing surfaces, landing pages, article cards, and the
-YouTube / Instagram / Facebook / share creatives that must stay on-brand.
+YouTube / Instagram / Facebook / share creatives that must stay on-brand — including
+YouTube thumbnails per `THUMBNAIL.md`.
 
 **Out of scope (and must not appear in this public repo):** TYPO3 backend, editor
 chrome, admin UI, analytics internals, or any hosting/theming specifics. Those live in

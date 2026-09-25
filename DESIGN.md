@@ -375,8 +375,26 @@ live in `assets/video/spec/video-templates.json`.
 Use photo-led frames: full-bleed Tenerife photography, dark veil if text sits on it,
 white or amber type, and the mark or lockup in a corner. Never a flat colour poster.
 
+### YouTube thumbnails
+Thumbnails are a **deliberate exception** to the quiet site UI. They stay photo-led and
+sun-amber anchored, but use condensed ALL-CAPS gold type, a black stroke, and the
+**Golden Vortex** light FX so titles survive mobile feeds. Full production rules,
+layer order, and checklist live in **`THUMBNAIL.md`** (same DESIGN.md format).
+
+| Spec | Value |
+|---|---|
+| Canvas | 1920 × 1080 preferred; 1280 × 720 minimum; sRGB; under 2 MB |
+| Title | Condensed display, ALL CAPS, gold `#ffcc00` + black stroke, top third |
+| Signature FX | Golden Vortex behind subject (`#ffe066` → `#ffaa00`, near `{colors.secondary}`) |
+| Watermark | Poppins `canaguia.com`, bottom-left, ≥ 40 px padding |
+| Safe exclude | Bottom-right 180 × 100 px (YouTube timestamp) — no faces, text, or logos |
+
+Do **not** port condensed display type, CTR gold fills, or the vortex into site CSS /
+`theme.css`. Site surfaces remain Poppins + `{colors.primary}` / `{colors.secondary}`
+per this file.
+
 ### Brand presence
-- **YouTube:** lockup (mono-white) over dark end-screens; 16:9 thumbnails at 1280×720.
+- **YouTube:** lockup (mono-white) over dark end-screens; thumbnails per `THUMBNAIL.md`.
 - **Instagram:** mark for the avatar; 1:1 and 4:5 feed, 9:16 stories/reels.
 - **Facebook:** lockup for the page profile; 16:9 cover at 820×312.
 
@@ -393,9 +411,12 @@ white or amber type, and the mark or lockup in a corner. Never a flat colour pos
 - Don't dark-mode the whole site — white is the default canvas.
 - Don't use amber as a full primary button or put white text on amber.
 - Don't use the social platform colours as UI fills.
-- Don't add neon gradients or purple/teal accents.
+- Don't add neon gradients or purple/teal accents on the **site** (the thumbnail
+  Golden Vortex is allowed only in YouTube thumbnails — see `THUMBNAIL.md`).
 - Don't crowd the hero with stats or secondary content — photo + title + one CTA.
 - Don't rebuild the wordmark from a random font in creatives.
+- Don't invent thumbnail layouts that skip the vortex, watermark, or timestamp
+  safe zone — follow `THUMBNAIL.md`.
 
 ## Iteration Guide
 
@@ -422,3 +443,6 @@ white or amber type, and the mark or lockup in a corner. Never a flat colour pos
 - **Transparent-background components** (nav links, headings, card titles, leads) are
   flagged by the linter against black, but in use they inherit white, where
   `{colors.ink}` reads ~15.9:1 and `{colors.ink-dim}` ~4.68:1 — both AA-compliant.
+- **YouTube thumbnail CTR stack** (condensed display, `#ffcc00` gold, vortex FX) is
+  specified in `THUMBNAIL.md` and intentionally excluded from site tokens /
+  `theme.css`.
