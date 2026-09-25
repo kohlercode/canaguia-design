@@ -1,0 +1,10 @@
+# QA output — regenerable, never content
+v-*.png
+shot-*.png
+
+# OS / editor
+.DS_Store
+Thumbs.db
+*.swp
+.idea/
+.vscode/

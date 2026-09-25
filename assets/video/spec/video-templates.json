@@ -1,0 +1,60 @@
+{
+  "aspects": {
+    "16x9": {
+      "canvas": { "w": 1920, "h": 1080 },
+      "safeArea": { "action": 0.93, "title": 0.9 },
+      "exclude": { "bottom": 0.1 },
+      "endScreen": { "right": 0.15, "lastSeconds": 20 },
+      "note": "YouTube, web embeds, video blog"
+    },
+    "9x16": {
+      "canvas": { "w": 1080, "h": 1920 },
+      "safeArea": { "action": 0.93, "title": 0.9 },
+      "exclude": { "top": 0.1, "bottom": 0.25, "right": 0.12 },
+      "note": "Shorts, Reels, Stories, TikTok"
+    },
+    "1x1": {
+      "canvas": { "w": 1080, "h": 1080 },
+      "safeArea": { "action": 0.93, "title": 0.9 },
+      "note": "Instagram / Facebook feed"
+    },
+    "4x5": {
+      "canvas": { "w": 1080, "h": 1350 },
+      "safeArea": { "action": 0.93, "title": 0.9 },
+      "note": "Instagram portrait feed"
+    }
+  },
+  "brand": {
+    "bg": "#343a40",
+    "primary": "#007ed4",
+    "secondary": "#ffae2a",
+    "ink": "#f8f9fa",
+    "veil": "rgba(0, 0, 0, 0.3)",
+    "mark": "assets/brand/logo/master/canaguia-mark.svg",
+    "markMonoWhite": "assets/brand/logo/master/canaguia-mark-mono-white.svg",
+    "lockup": "assets/brand/logo/master/canaguia-logo.svg"
+  },
+  "platforms": {
+    "youtube": {
+      "avatar": { "w": 800, "h": 800, "asset": "mark" },
+      "banner": { "w": 2560, "h": 1440, "safe": { "w": 1546, "h": 423 } },
+      "thumbnail": { "w": 1280, "h": 720 },
+      "video": { "w": 1920, "h": 1080 }
+    },
+    "instagram": {
+      "avatar": { "w": 320, "h": 320, "asset": "mark" },
+      "postSquare": { "w": 1080, "h": 1080 },
+      "postPortrait": { "w": 1080, "h": 1350 },
+      "storyReel": { "w": 1080, "h": 1920 }
+    },
+    "facebook": {
+      "avatar": { "w": 170, "h": 170, "asset": "mark" },
+      "cover": { "w": 820, "h": 312 },
+      "linkOg": { "w": 1200, "h": 630 }
+    },
+    "og": {
+      "default": { "w": 1200, "h": 630 }
+    }
+  },
+  "templates": []
+}

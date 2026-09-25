@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Canaguia — Design Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --primary: #007ed4;
+    --primary-hover: #0065aa;
+    --secondary: #ffae2a;
+    --bg: #ffffff;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --ink: #212529;
+    --ink-dim: #6c757d;
+    --on-primary: #ffffff;
+    --on-dark: #f8f9fa;
+    --line: #dee2e6;
+    --radius-md: 8px;
+    --radius-xl: 16px;
+    --radius-full: 800px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Poppins", Arial, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.5;
+  }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+
+  /* header */
+  .nav { background: var(--light); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+  .nav-inner img { height: 40px; }
+  .nav-links { display: flex; gap: 24px; font-weight: 500; font-size: 15px; }
+  .nav-links a { color: var(--ink); text-decoration: none; }
+  .nav-links a:hover { color: var(--primary); }
+
+  /* hero (photo placeholder) */
+  .hero {
+    position: relative; min-height: 400px; display: flex; align-items: flex-end;
+    background: linear-gradient(140deg, #0a4f7e 0%, #005c9e 35%, #007ed4 70%, #34a0e6 100%);
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(0,0,0,0.55), rgba(0,0,0,0.15));
+  }
+  .hero-inner { position: relative; z-index: 1; padding: 64px 24px; color: var(--on-dark); max-width: 700px; }
+  .hero-inner h1 { font-size: clamp(28px, 4vw, 40px); font-weight: 700; line-height: 1.2; margin: 12px 0 8px; }
+  .hero-inner p { font-size: 20px; margin: 0 0 24px; opacity: 0.92; }
+  .hero-veil-note { position: absolute; right: 16px; bottom: 12px; z-index: 1; color: var(--on-dark); font-size: 11px; opacity: 0.7; }
+
+  section { padding: 48px 0; }
+  section h2 { font-size: 28px; font-weight: 700; margin: 0 0 8px; }
+  .lead { font-size: 18px; color: var(--ink-dim); margin: 0 0 24px; }
+  .divider { height: 1px; background: var(--line); margin: 48px 0; }
+
+  /* swatches */
+  .swatches { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 16px; }
+  .swatch { border: 1px solid var(--line); border-radius: var(--radius-xl); overflow: hidden; }
+  .swatch .chip { height: 72px; }
+  .swatch .meta { padding: 10px 12px; font-size: 12px; }
+  .swatch .meta b { display: block; font-size: 13px; }
+
+  /* type scale */
+  .type-row { display: flex; align-items: baseline; gap: 20px; padding: 12px 0; border-bottom: 1px solid var(--line); }
+  .type-row .name { width: 130px; font-size: 12px; color: var(--ink-dim); text-transform: uppercase; letter-spacing: 0.04em; }
+
+  /* buttons */
+  .btn { display: inline-block; font-size: 20px; font-weight: 500; line-height: 1; padding: 12px 24px; border-radius: var(--radius-md); border: none; cursor: pointer; text-decoration: none; }
+  .btn-primary { background: var(--primary); color: var(--on-primary); }
+  .btn-primary:hover { background: var(--primary-hover); }
+  .btn-secondary { background: var(--secondary); color: var(--ink); }
+
+  .label { display: inline-block; background: var(--primary); color: var(--on-primary); font-size: 12px; font-weight: 700; padding: 8px 16px; border-radius: var(--radius-full); }
+  .badge { display: inline-block; background: var(--light); color: var(--ink); font-size: 12px; padding: 4px 8px; border-radius: 4px; }
+
+  /* cards */
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+  .card { background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-xl); overflow: hidden; }
+  .card .img { height: 140px; background: linear-gradient(140deg, #7fb8e8, #1a86d8); }
+  .card .body { padding: 16px; }
+  .card h3 { margin: 0 0 6px; font-size: 18px; font-weight: 600; }
+  .card p { margin: 0; font-size: 14px; color: var(--ink-dim); }
+
+  /* social frame */
+  .social-row { display: flex; gap: 20px; flex-wrap: wrap; }
+  .social-frame { width: 260px; border: 1px solid var(--line); border-radius: var(--radius-xl); overflow: hidden; }
+  .social-frame .media { height: 260px; background: linear-gradient(160deg, #123 0%, #0a4f7e 55%, #e07b1a 120%); position: relative; }
+  .social-frame .media img { position: absolute; top: 10px; left: 10px; height: 28px; }
+  .social-frame .caption { padding: 12px 14px; font-size: 13px; }
+
+  footer { background: var(--dark); color: var(--on-dark); padding: 48px 0 32px; margin-top: 24px; }
+  footer .copy { color: var(--ink-dim); font-size: 12px; margin-top: 16px; }
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <div class="wrap nav-inner">
+    <img src="assets/brand/logo/master/canaguia-logo.svg" alt="Canaguia" />
+    <div class="nav-links">
+      <a href="#">Atracciones</a><a href="#">Naturaleza</a><a href="#">Deportes</a><a href="#">Experiencias</a>
+    </div>
+  </div>
+</div>
+
+<div class="hero">
+  <div class="wrap hero-inner">
+    <span class="label">Tu guía de Tenerife</span>
+    <h1>Explora la isla con Canaguia</h1>
+    <p>Naturaleza, aventura y sabor local, de la mano de un guía que conoce cada rincón.</p>
+    <a class="btn btn-primary" href="#">Explora ya</a>
+  </div>
+  <span class="hero-veil-note">hero = foto full-bleed + velo oscuro (brightness 0.7) — placeholder de gradiente</span>
+</div>
+
+<div class="wrap">
+  <section>
+    <h2>Colors</h2>
+    <p class="lead">Océano azul para la marca y las acciones; ámbar sol como chispa.</p>
+    <div class="swatches">
+      <div class="swatch"><div class="chip" style="background:#007ed4"></div><div class="meta"><b>Primary</b>#007ed4</div></div>
+      <div class="swatch"><div class="chip" style="background:#0065aa"></div><div class="meta"><b>Primary Hover</b>#0065aa</div></div>
+      <div class="swatch"><div class="chip" style="background:#ffae2a"></div><div class="meta"><b>Secondary</b>#ffae2a</div></div>
+      <div class="swatch"><div class="chip" style="background:#212529"></div><div class="meta"><b>Ink</b>#212529</div></div>
+      <div class="swatch"><div class="chip" style="background:#6c757d"></div><div class="meta"><b>Ink Dim</b>#6c757d</div></div>
+      <div class="swatch"><div class="chip" style="background:#f8f9fa; border-bottom:1px solid #dee2e6"></div><div class="meta"><b>Light</b>#f8f9fa</div></div>
+      <div class="swatch"><div class="chip" style="background:#343a40"></div><div class="meta"><b>Dark</b>#343a40</div></div>
+      <div class="swatch"><div class="chip" style="background:#dee2e6"></div><div class="meta"><b>Line</b>#dee2e6</div></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2>Typography</h2>
+    <p class="lead">Poppins — titulares 700, cuerpo 400, botones 500.</p>
+    <div class="type-row"><span class="name">display-lg</span><span style="font-size:40px;font-weight:700">Mirador de Humboldt</span></div>
+    <div class="type-row"><span class="name">display-md</span><span style="font-size:32px;font-weight:700">Naturaleza y senderos</span></div>
+    <div class="type-row"><span class="name">h2</span><span style="font-size:28px;font-weight:700">Playa de las Teresitas</span></div>
+    <div class="type-row"><span class="name">h3</span><span style="font-size:24px;font-weight:600">Título de tarjeta</span></div>
+    <div class="type-row"><span class="name">lead</span><span style="font-size:20px">Un párrafo de introducción amplio y legible.</span></div>
+    <div class="type-row"><span class="name">body-md</span><span style="font-size:16px">Texto de cuerpo estándar para artículos y descripciones.</span></div>
+    <div class="type-row"><span class="name">body-sm</span><span style="font-size:14px">Texto compacto y metadatos.</span></div>
+    <div class="type-row"><span class="name">caption</span><span style="font-size:12px; color:var(--ink-dim)">Pie de foto y notas.</span></div>
+    <div class="type-row"><span class="name">label</span><span class="label">Etiqueta</span></div>
+    <div class="type-row"><span class="name">button</span><span class="btn btn-primary">Botón</span></div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2>Components</h2>
+    <p class="lead">Botones, etiquetas y badges.</p>
+    <div style="display:flex; gap:16px; align-items:center; flex-wrap:wrap;">
+      <a class="btn btn-primary" href="#">Reserva ya</a>
+      <a class="btn btn-secondary" href="#">Ver más</a>
+      <span class="label">Nuevo</span>
+      <span class="badge">Gastronomía</span>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2>Cards</h2>
+    <p class="lead">La tarjeta es el bloque de trabajo: actividades, experiencias, gastronomía y noticias.</p>
+    <div class="cards">
+      <div class="card"><div class="img"></div><div class="body"><h3>Mirador de La Caleta</h3><p>Vistas al mar y gastronomía de lujo en Costa Adeje.</p></div></div>
+      <div class="card"><div class="img"></div><div class="body"><h3>Yate de lujo</h3><p>La experiencia más exclusiva de Tenerife.</p></div></div>
+      <div class="card"><div class="img"></div><div class="body"><h3>Asador Canario</h3><p>Carnes a la brasa y mojos caseros.</p></div></div>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <section>
+    <h2>Social frame</h2>
+    <p class="lead">Marco 1:1 con foto, marca en esquina y texto sobre velo.</p>
+    <div class="social-row">
+      <div class="social-frame">
+        <div class="media"><img src="assets/brand/logo/master/canaguia-mark.svg" alt="Canaguia" /></div>
+        <div class="caption"><b>Playa de las Américas</b><br/>La Milla de Oro y el mejor surf.</div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <img src="assets/brand/logo/master/canaguia-logo-mono-white.svg" alt="Canaguia" style="height:36px" />
+    <div class="copy">Canaguia — Tu guía de Tenerife. © 2026</div>
+  </div>
+</footer>
+
+</body>
+</html>
